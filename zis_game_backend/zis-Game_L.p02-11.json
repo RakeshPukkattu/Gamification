@@ -1,0 +1,2908 @@
+{
+	"info": {
+		"_postman_id": "0660be72-954f-42c9-a568-f308c4ff7a61",
+		"name": "zis-Game_L",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "signIn",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "userJson",
+									"value": "{   \"email\":\"nair.rakesh342@gmail.com\",\n    \"password\":\"Z!spl123\",\n    \"deviceInfo\": {\n\"deviceId\":\"aaaa-aaaa-aaaa\",        \"deviceType\":\"BROWSER_CHROME\"\n        }\n    }",
+									"type": "text"
+								},
+								{
+									"key": "key",
+									"value": "http://localhost:8080/userManagement/downloadFile/female-avathar5.jpg",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "role",
+									"value": "SuperAdmin",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/gamification/auth/signin",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"gamification",
+								"auth",
+								"signin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "refresh",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "BearereyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJyYWtlc2gucHJAemlzcGwuY29tIiwiaXNzIjoiZ2FtaWZpY2F0aW9uIiwianRpIjoiMSIsImlhdCI6MTYzMTQyODM0NSwiZXhwIjoxNjMxNDMxOTQ1fQ.gAtyVcsJpnXde8T-CLC_6MAYftbn3L1CNxDOChIj0PW6CuNxXyowgdvUcYbLsThZdWnFwn1f66GxjqBYYpvUbA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "role",
+									"value": "Super Admin",
+									"type": "text"
+								},
+								{
+									"key": "userJson",
+									"value": "{\"refreshToken\": \"0b1ce515-5106-41b6-832c-8d2275876c44\"}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/gamification/auth/refresh/rakesh.pr@zispl.com",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"gamification",
+								"auth",
+								"refresh",
+								"rakesh.pr@zispl.com"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "signOut",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "BearereyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJyYWtlc2gucHJAemlzcGwuY29tIiwiaXNzIjoiZ2FtaWZpY2F0aW9uIiwianRpIjoiMTQyIiwiaWF0IjoxNjM1MTY3MzAzLCJleHAiOjE2MzUxNzA5MDN9.jyeusEYodh1BZIgNl-cyl5M2a8zdLf8DWX8gSVb1OE0CIYT4fgN0-DigAwalSDiwGMu5q7XnwrDSDKSs3ii_Ig",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"deviceInfo\": {\r\n        \"deviceId\":\"aaaa-aaaa-aaaa\",\r\n        \"deviceType\":\"BROWSER_CHROME\"\r\n        },\r\n        \"token\":\"eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJyYWtlc2gucHJAemlzcGwuY29tIiwiaXNzIjoiZ2FtaWZpY2F0aW9uIiwianRpIjoiMTQyIiwiaWF0IjoxNjM1MTY3MzAzLCJleHAiOjE2MzUxNzA5MDN9.jyeusEYodh1BZIgNl-cyl5M2a8zdLf8DWX8gSVb1OE0CIYT4fgN0-DigAwalSDiwGMu5q7XnwrDSDKSs3ii_Ig\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/gamification/auth/signout",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"gamification",
+								"auth",
+								"signout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Others",
+			"item": [
+				{
+					"name": "Register Superadmin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "userJson",
+									"value": "{\n    \"name\": \"SuperZispl\",\n    \"email\": \"superzispl@gmail.com\",\n    \"password\": \"z!splgame\",\n    \"country\": \"india\"\n}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/userManagement/register",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"userManagement",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register Learner",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "userJson",
+									"value": "{\n    \"email\": \"nair.rakesh342@gmail.com\",\n    \"password\":\"123456\",\n    \"name\": \"Rakesh Nair\",\n     \"country\": \"india\"\n}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/userManagement/userRegistration",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"userManagement",
+								"userRegistration"
+							]
+						},
+						"description": "need to add superadmin for the first login\r\n\r\nwith details"
+					},
+					"response": []
+				},
+				{
+					"name": "User Details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/userManagement/getCredentials/superzispl@gmail.com",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"userManagement",
+								"getCredentials",
+								"superzispl@gmail.com"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Permitted Domains",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/userManagement/domains",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"userManagement",
+								"domains"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Avathar Thumbnails",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/userManagement/avathars",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"userManagement",
+								"avathars"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Forgot Password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/forgot_password?email=rakesh.pr@zispl.com",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"forgot_password"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "rakesh.pr@zispl.com"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upload Avathar-Thumbs",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/rakes/Desktop/uploa/male-avathar5.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/userManagement/uploadAvathar",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"userManagement",
+								"uploadAvathar"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User Management",
+			"item": [
+				{
+					"name": "Users",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "BearereyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuYWlyLnJha2VzaDM0MkBnbWFpbC5jb20iLCJpc3MiOiJnYW1pZmljYXRpb24iLCJqdGkiOiI2IiwiaWF0IjoxNjM1MTM1NjQyLCJleHAiOjE2MzUxMzkyNDJ9.g_uwLa1tCZbG0wUgf80cOm64a1uClOpxy1oJOAdJgKQQm_m8tuRryQQREW4GvBTvindlDo6_LSJ4m1AqaAZWog",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8080/userManagement/users",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"userManagement",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User{E-Mail}",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "BearereyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzdXBlcnppc3BsQGdtYWlsLmNvbSIsImlzcyI6ImdhbWlmaWNhdGlvbiIsImp0aSI6IjEiLCJpYXQiOjE2MzIzODYwMTgsImV4cCI6MTYzMjM4OTYxOH0.JrF8H8BE9YN5MeBBl1HfTPh_YSKQazpYG1LsVyUkdZNAHPYyM_trSN7pAXX-XKZesupEEBvixPqA7GJ1l8uSIw",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8080/userManagement/getUser/viratsharma@gmail.com",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"userManagement",
+								"getUser",
+								"viratsharma@gmail.com"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "BearereyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzdXBlcnppc3BsQGdtYWlsLmNvbSIsImlzcyI6ImdhbWlmaWNhdGlvbiIsImp0aSI6IjEiLCJpYXQiOjE2MzIzODYwMTgsImV4cCI6MTYzMjM4OTYxOH0.JrF8H8BE9YN5MeBBl1HfTPh_YSKQazpYG1LsVyUkdZNAHPYyM_trSN7pAXX-XKZesupEEBvixPqA7GJ1l8uSIw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "userJson",
+									"value": "{\n    \"name\": \"Virat Sharma\",\n    \"email\": \"viratsharma@gmail.com\",\n    \"roles\":[\"Admin\"],\n    \"country\": \"India\"\n}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/userManagement/addNewUser",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"userManagement",
+								"addNewUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Modify User",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "BearereyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzdXBlcnppc3BsQGdtYWlsLmNvbSIsImlzcyI6ImdhbWlmaWNhdGlvbiIsImp0aSI6IjEiLCJpYXQiOjE2MzIzODYwMTgsImV4cCI6MTYzMjM4OTYxOH0.JrF8H8BE9YN5MeBBl1HfTPh_YSKQazpYG1LsVyUkdZNAHPYyM_trSN7pAXX-XKZesupEEBvixPqA7GJ1l8uSIw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "userJson",
+									"value": "{\n    \"name\": \"Virat Sharma\",\n    \"email\": \"virat@zispl.com\",\n    \"roles\":[\"SuperAdmin\",\"Admin\",\"Learner\"],\n    \"country\": \"India\"\n}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/userManagement/modifyUser/7",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"userManagement",
+								"modifyUser",
+								"7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update UserAvathar",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "BearereyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuYWlyLnJha2VzaDM0MkBnbWFpbC5jb20iLCJpc3MiOiJnYW1pZmljYXRpb24iLCJqdGkiOiI2IiwiaWF0IjoxNjM1MDYxMDU1LCJleHAiOjE2MzUwNjQ2NTV9.Aw2E19u3kWlSfptIX3IWxy6mq70sxtPMfRmu44t2rN9kxK_h4xBsP0qSnlyzi4u-91g12FnSOsqrcQZt_-kLpA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/rakes/Desktop/download.jpg"
+								},
+								{
+									"key": "key",
+									"value": "http://localhost:8080/userManagement/downloadFile/1634093817964_female-avathar1.png",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/userManagement/userAvatharImage/nair.rakesh342@gmail.com",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"userManagement",
+								"userAvatharImage",
+								"nair.rakesh342@gmail.com"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update UserStatus",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "BearereyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuYWlyLnJha2VzaDM0MkBnbWFpbC5jb20iLCJpc3MiOiJnYW1pZmljYXRpb24iLCJqdGkiOiI2IiwiaWF0IjoxNjM1MTQ5MDc4LCJleHAiOjE2MzUxNTI2Nzh9.lqHmmvda_Ap_qFVgIzR2rHznlcUmvU5kwfdO7it5r8ad2iLEbKACziEMwBYACiw_b7vZZarJNhoOh2mZATy7Vw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "userJson",
+									"value": "{\"status\": \"false\"}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/userManagement/updateStatus/rakeshpukkattu@outlook.com",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"userManagement",
+								"updateStatus",
+								"rakeshpukkattu@outlook.com"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add BulkUsers",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "BearereyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJyYWtlc2gucHJAemlzcGwuY29tIiwiaXNzIjoiZ2FtaWZpY2F0aW9uIiwianRpIjoiMSIsImlhdCI6MTYzMjMxMDA5MiwiZXhwIjoxNjMyMzEzNjkyfQ.raZIhgBppF1ZYpsAaN_kb1CGT6qHL9fzPEuaxzMoZ6_yIjLsd9SOw1uoUc7DgGnMA7StVDqbT4c1x7u2fxmfxA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/rakes/Desktop/sample.xlsx"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/userManagement/addBulkUser",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"userManagement",
+								"addBulkUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SuperAdminBulkUserUpload",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "BearereyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuYWlyLnJha2VzaDM0MkBnbWFpbC5jb20iLCJpc3MiOiJnYW1pZmljYXRpb24iLCJqdGkiOiI2IiwiaWF0IjoxNjM0NzI1MTY1LCJleHAiOjE2MzQ3Mjg3NjV9.EsD0G4Xmys02Zc86OKAhDs7bUIm4cyoU3-KjgaTE7ZD-Wki6JS8d-oOOVjd232pibGVfB4-xhUK26ztXesv63Q",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/rakes/Desktop/Sample-SA.xlsx"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/userManagement/superAdminBulkUpload",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"userManagement",
+								"superAdminBulkUpload"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AdminBulkUserUpload",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "BearereyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuYWlyLnJha2VzaDM0MkBnbWFpbC5jb20iLCJpc3MiOiJnYW1pZmljYXRpb24iLCJqdGkiOiI2IiwiaWF0IjoxNjM0NzI1MTY1LCJleHAiOjE2MzQ3Mjg3NjV9.EsD0G4Xmys02Zc86OKAhDs7bUIm4cyoU3-KjgaTE7ZD-Wki6JS8d-oOOVjd232pibGVfB4-xhUK26ztXesv63Q",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/rakes/Desktop/SampleA.xlsx"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/userManagement/adminBulkUpload",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"userManagement",
+								"adminBulkUpload"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ErrorLog Excel",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "BearereyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuYWlyLnJha2VzaDM0MkBnbWFpbC5jb20iLCJpc3MiOiJnYW1pZmljYXRpb24iLCJqdGkiOiI2IiwiaWF0IjoxNjM0NzI1MTY1LCJleHAiOjE2MzQ3Mjg3NjV9.EsD0G4Xmys02Zc86OKAhDs7bUIm4cyoU3-KjgaTE7ZD-Wki6JS8d-oOOVjd232pibGVfB4-xhUK26ztXesv63Q",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8080/userManagement/download/errorLog.xlsx",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"userManagement",
+								"download",
+								"errorLog.xlsx"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Group Management",
+			"item": [
+				{
+					"name": "Groups",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "BearereyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuYWlyLnJha2VzaDM0MkBnbWFpbC5jb20iLCJpc3MiOiJnYW1pZmljYXRpb24iLCJqdGkiOiI2IiwiaWF0IjoxNjM0NTc2NjQwLCJleHAiOjE2MzQ1ODAyNDB9.FQ4va-AV5uFrZFGjkT5wXjU9UmY-i573XGoTWi4XveQSQIvZEi7aV6bUQPJlC13Ls8F65mwOJmdOrDAO_hn4Fg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8080/groupManagement/groups",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"groupManagement",
+								"groups"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Group",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "BearereyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzdXBlcnppc3BsQGdtYWlsLmNvbSIsImlzcyI6ImdhbWlmaWNhdGlvbiIsImp0aSI6IjEiLCJpYXQiOjE2MzIzODYwMTgsImV4cCI6MTYzMjM4OTYxOH0.JrF8H8BE9YN5MeBBl1HfTPh_YSKQazpYG1LsVyUkdZNAHPYyM_trSN7pAXX-XKZesupEEBvixPqA7GJ1l8uSIw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "userJson",
+									"value": "{\n    \"groupName\": \"Mumbai Indians\",\n    \"groupMemberIds\":[\"1\",\"6\",\"7\"]\n}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/groupManagement/creategroup",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"groupManagement",
+								"creategroup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Group with ID",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "BearereyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJyYWtlc2gucHJAemlzcGwuY29tIiwiaXNzIjoiZ2FtaWZpY2F0aW9uIiwianRpIjoiMSIsImlhdCI6MTYzMTU4ODg1MiwiZXhwIjoxNjMxNTkyNDUyfQ.0alHxqKZT9_BoC6QniDOhQVhEbh83YNnjH5RNF3RVhx4I4OkAUB_lqz4OVbMaP-s-K9yA8BKKmMXhkB224KJ2Q",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8080/groupManagement/group/41",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"groupManagement",
+								"group",
+								"41"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Modify Group with ID",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "BearereyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzdXBlcnppc3BsQGdtYWlsLmNvbSIsImlzcyI6ImdhbWlmaWNhdGlvbiIsImp0aSI6IjEiLCJpYXQiOjE2MzIzODk5ODIsImV4cCI6MTYzMjM5MzU4Mn0.EC3_7PqR_rxprVh-YPfFmeNoeeKKrJpnJjbi4uM5RlkgQTKTV2mtF2PYOk6DS52NclC94BUA54xWh8vZRkhnxg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "userJson",
+									"value": "{\"groupName\":\"ZIS-INDIAN\",\n\"groupMemberIds\":[\"1\"]}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/groupManagement/modifyGroup/8",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"groupManagement",
+								"modifyGroup",
+								"8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Status with ID",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "BearereyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJyYWtlc2gucHJAemlzcGwuY29tIiwiaXNzIjoiZ2FtaWZpY2F0aW9uIiwianRpIjoiMSIsImlhdCI6MTYzMTY5Nzc2NCwiZXhwIjoxNjMxNzAxMzY0fQ.xEsXtwAmXe55LElDT1cbDdC-o9KroD_MJBy5WXtZf1axLCAOR1xFbdFZCwzXEN5fzzUifLyoRX3lFv8vkevEWg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "userJson",
+									"value": "{\"groupStatus\":\"true\"}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/groupManagement/updateStatus/111",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"groupManagement",
+								"updateStatus",
+								"111"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete group  with Id",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "BearereyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJyYWtlc2gucHJAemlzcGwuY29tIiwiaXNzIjoiZ2FtaWZpY2F0aW9uIiwianRpIjoiMSIsImlhdCI6MTYzMTQzMDk1OSwiZXhwIjoxNjMxNDM0NTU5fQ.gPW0wdPNCgtMk3oi9H2M2vNnA6zemt2DjnOufaWJLEVYKRY6JZn7ekQGQzVvRNuuhJdctuQes3iWS4PIujyDag",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8080/groupManagement/delete/102",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"groupManagement",
+								"delete",
+								"102"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Groups",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "BearereyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJyYWtlc2gucHJAemlzcGwuY29tIiwiaXNzIjoiZ2FtaWZpY2F0aW9uIiwianRpIjoiMSIsImlhdCI6MTYzMTU5MzI5MCwiZXhwIjoxNjMxNTk2ODkwfQ.Rb41qDWanvT0JMXFmyFd0ZTY0uIfcQtk19InO4jVz1pqx930kOVNtAOBtOpTtSARmWzf-gCMTj8VJ8gkOOClAw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "groupIds",
+									"value": "{\n\"groupMemberIds\":[\"55\",\"108\"]\n}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/groupManagement/deleteGroups",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"groupManagement",
+								"deleteGroups"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Session Management Group",
+			"item": [
+				{
+					"name": "Get Session with ID",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "BearereyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJyYWtlc2gucHJAemlzcGwuY29tIiwiaXNzIjoiZ2FtaWZpY2F0aW9uIiwianRpIjoiMSIsImlhdCI6MTYzMTcxMzkwNiwiZXhwIjoxNjMxNzE3NTA2fQ.Z8z3RpmiaIMAGbcDU_wbxmVA3DffFmeOY_GwdgCPEcdbOrjERfzpqV9H4PpGtMuROHe6Sj5NcjeQivXCbtDPew",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8080/gameSessionManagement/gameSession/126",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"gameSessionManagement",
+								"gameSession",
+								"126"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Groups in Session with ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "BearereyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJyYWtlc2gucHJAemlzcGwuY29tIiwiaXNzIjoiZ2FtaWZpY2F0aW9uIiwianRpIjoiMSIsImlhdCI6MTYzMTY4MDY4NCwiZXhwIjoxNjMxNjg0Mjg0fQ.YFmL4IOW5sH848rfOM89gXCG7FZ9aOCZyW8hZKIZ3EqI84ZtGPdxIaB6PiEGk0IGnWQVYhbCnCWnftNjI42jUA",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8080/gameSessionManagement/gameSessions/groupInSession/120",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"gameSessionManagement",
+								"gameSessions",
+								"groupInSession",
+								"120"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Sessions",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "BearereyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuYWlyLnJha2VzaDM0MkBnbWFpbC5jb20iLCJpc3MiOiJnYW1pZmljYXRpb24iLCJqdGkiOiI2IiwiaWF0IjoxNjM0NTc2NjQwLCJleHAiOjE2MzQ1ODAyNDB9.FQ4va-AV5uFrZFGjkT5wXjU9UmY-i573XGoTWi4XveQSQIvZEi7aV6bUQPJlC13Ls8F65mwOJmdOrDAO_hn4Fg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "localhost:8080/gameSessionManagement/gameSessions",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"gameSessionManagement",
+								"gameSessions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Enable-Disable with ID",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "BearereyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJyYWtlc2gucHJAemlzcGwuY29tIiwiaXNzIjoiZ2FtaWZpY2F0aW9uIiwianRpIjoiMSIsImlhdCI6MTYzMTU1MzQ4MCwiZXhwIjoxNjMxNTU3MDgwfQ.w0kAgdXThLXM__wMOK-WoZEZCqjvTLKt1KR53Tb-LUJB6hTGTr__Qi9BEYRQ-3LYlHhGQEBDQ1vN4O4AXBFC9Q",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "userJson",
+									"value": "{\"sessionEnableDisable\":\"true\"}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/gameSessionManagement/updateEnableDisable/107",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"gameSessionManagement",
+								"updateEnableDisable",
+								"107"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Current Status with ID",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "BearereyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzdXBlcnppc3BsQGdtYWlsLmNvbSIsImlzcyI6ImdhbWlmaWNhdGlvbiIsImp0aSI6IjEiLCJpYXQiOjE2MzMzMzc5MzMsImV4cCI6MTYzMzM0MTUzM30.dabENBlnPEX750EfCaUnmftq06Ssp1UcWN7uga2uU4HPypCiBrdqjiGm4xonUMCNYUXVE9Ggf3leqlPGow_Q-g",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "userJson",
+									"value": "{\"sessionCurrentStatus\":\"about_To_Start\"}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/gameSessionManagement/updateSessionStatus/10",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"gameSessionManagement",
+								"updateSessionStatus",
+								"10"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Session",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "BearereyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuYWlyLnJha2VzaDM0MkBnbWFpbC5jb20iLCJpc3MiOiJnYW1pZmljYXRpb24iLCJqdGkiOiI2IiwiaWF0IjoxNjM0NTc2NjQwLCJleHAiOjE2MzQ1ODAyNDB9.FQ4va-AV5uFrZFGjkT5wXjU9UmY-i573XGoTWi4XveQSQIvZEi7aV6bUQPJlC13Ls8F65mwOJmdOrDAO_hn4Fg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "userJson",
+									"value": "{\n    \"sessionName\": \"Energy\",\n    \"startDateandTime\":\"2021-12-16T05:15\",\n    \"endDateandTime\":\"2021-12-17T11:30\",\n    \"groupIds\":[\"121\",\"130\"]\n}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/gameSessionManagement/createGameSession",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"gameSessionManagement",
+								"createGameSession"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Modify Session with ID",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "BearereyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJyYWtlc2gucHJAemlzcGwuY29tIiwiaXNzIjoiZ2FtaWZpY2F0aW9uIiwianRpIjoiMSIsImlhdCI6MTYzMTg2ODczNiwiZXhwIjoxNjMxODcyMzM2fQ.h5lWzrM7L3xIhWDUGecnc0b4UzYnl3l7SjwwBYTOPp7vHDaEPpaE9xfMbqBV6GGsZ46WdoW7qqnEFusJYccdNQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "userJson",
+									"value": "{\"sessionName\":\"Energy1000\",\n\"startDateandTime\":\"2021-10-16T05:15\",\n\"endDateandTime\":\"2021-10-16T09:30\",\n\"groupIds\":[\"137\",\"135\"]}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/gameSessionManagement/modifySession/148",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"gameSessionManagement",
+								"modifySession",
+								"148"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Session Management User",
+			"item": [
+				{
+					"name": "Get Session with ID",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "BearereyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuYWlyLnJha2VzaDM0MkBnbWFpbC5jb20iLCJpc3MiOiJnYW1pZmljYXRpb24iLCJqdGkiOiI2IiwiaWF0IjoxNjM0MDQwNTk1LCJleHAiOjE2MzQwNDQxOTV9.PHpxptpMte0s9LhpgBe88XzVmKcp-Yg5WgVBwhhYhfUI3G1l2lTXhu5FqOq1AnGG_Fe5s2yDElgKo24L4Okf2g",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8080/gameSessionUserManagement/gameUserSession/44",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"gameSessionUserManagement",
+								"gameUserSession",
+								"44"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Users in Session with ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "BearereyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuYWlyLnJha2VzaDM0MkBnbWFpbC5jb20iLCJpc3MiOiJnYW1pZmljYXRpb24iLCJqdGkiOiI2IiwiaWF0IjoxNjM0MDQwNTk1LCJleHAiOjE2MzQwNDQxOTV9.PHpxptpMte0s9LhpgBe88XzVmKcp-Yg5WgVBwhhYhfUI3G1l2lTXhu5FqOq1AnGG_Fe5s2yDElgKo24L4Okf2g",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8080/gameSessionUserManagement/gameUserSessions/userInSession/44",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"gameSessionUserManagement",
+								"gameUserSessions",
+								"userInSession",
+								"44"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Sessions",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "BearereyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuYWlyLnJha2VzaDM0MkBnbWFpbC5jb20iLCJpc3MiOiJnYW1pZmljYXRpb24iLCJqdGkiOiI2IiwiaWF0IjoxNjM0NTcxMjQ1LCJleHAiOjE2MzQ1NzQ4NDV9.CT0txZXuSjtDQobdoSQvhboCaRgGoO9g7vVGfWoKnOp6_YXTdcNcIYNpFKBkP2MKf23qnaxUamijoUQSfNMprA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "localhost:8080/gameSessionUserManagement/gameUserSessions",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"gameSessionUserManagement",
+								"gameUserSessions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Enable-Disable with ID",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "BearereyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuYWlyLnJha2VzaDM0MkBnbWFpbC5jb20iLCJpc3MiOiJnYW1pZmljYXRpb24iLCJqdGkiOiI2IiwiaWF0IjoxNjM0MDQwNTk1LCJleHAiOjE2MzQwNDQxOTV9.PHpxptpMte0s9LhpgBe88XzVmKcp-Yg5WgVBwhhYhfUI3G1l2lTXhu5FqOq1AnGG_Fe5s2yDElgKo24L4Okf2g",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "userJson",
+									"value": "{\"sessionEnableDisable\":\"false\"}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/gameSessionUserManagement/updateEnableDisable/44",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"gameSessionUserManagement",
+								"updateEnableDisable",
+								"44"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Current Status with ID",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "BearereyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuYWlyLnJha2VzaDM0MkBnbWFpbC5jb20iLCJpc3MiOiJnYW1pZmljYXRpb24iLCJqdGkiOiI2IiwiaWF0IjoxNjM0MDQwNTk1LCJleHAiOjE2MzQwNDQxOTV9.PHpxptpMte0s9LhpgBe88XzVmKcp-Yg5WgVBwhhYhfUI3G1l2lTXhu5FqOq1AnGG_Fe5s2yDElgKo24L4Okf2g",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "userJson",
+									"value": "{\"sessionCurrentStatus\":\"about_To_Start\"}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/gameSessionUserManagement/updateSessionStatus/44",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"gameSessionUserManagement",
+								"updateSessionStatus",
+								"44"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Session",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "BearereyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuYWlyLnJha2VzaDM0MkBnbWFpbC5jb20iLCJpc3MiOiJnYW1pZmljYXRpb24iLCJqdGkiOiI2IiwiaWF0IjoxNjM0NTcxMjQ1LCJleHAiOjE2MzQ1NzQ4NDV9.CT0txZXuSjtDQobdoSQvhboCaRgGoO9g7vVGfWoKnOp6_YXTdcNcIYNpFKBkP2MKf23qnaxUamijoUQSfNMprA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "userJson",
+									"value": "{\n    \"sessionName\": \"Energy1000\",\n    \"startDateandTime\":\"2021-12-16T05:15\",\n    \"endDateandTime\":\"2021-12-17T11:30\",\n    \"userIds\":[\"1\",\"6\"]\n}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/gameSessionUserManagement/createGameUserSession",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"gameSessionUserManagement",
+								"createGameUserSession"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Modify Session with ID",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "BearereyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuYWlyLnJha2VzaDM0MkBnbWFpbC5jb20iLCJpc3MiOiJnYW1pZmljYXRpb24iLCJqdGkiOiI2IiwiaWF0IjoxNjM0MDQwNTk1LCJleHAiOjE2MzQwNDQxOTV9.PHpxptpMte0s9LhpgBe88XzVmKcp-Yg5WgVBwhhYhfUI3G1l2lTXhu5FqOq1AnGG_Fe5s2yDElgKo24L4Okf2g",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "userJson",
+									"value": "{\"sessionName\":\"Energy1000\",\n\"startDateandTime\":\"2021-10-16T05:15\",\n\"endDateandTime\":\"2021-10-16T09:30\",\n\"userIds\":[\"1\"]}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/gameSessionUserManagement/modifyGameUserSession/44",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"gameSessionUserManagement",
+								"modifyGameUserSession",
+								"44"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Survey Management",
+			"item": [
+				{
+					"name": "Assign Survey",
+					"item": [
+						{
+							"name": "Assign Survey[ID]",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "BearereyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuYWlyLnJha2VzaDM0MkBnbWFpbC5jb20iLCJpc3MiOiJnYW1pZmljYXRpb24iLCJqdGkiOiI2IiwiaWF0IjoxNjM1NzU5ODA3LCJleHAiOjE2MzU3NjM0MDd9.mayQAq_QL2-EA6J4bFdw4UolGBqb9cp2jmXLY_IXR7YEw8LKFgxDyx-wGIsD8FmFaZ74CZE0iFuV4YVRIjsV7w",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "userJson",
+											"value": "{\"userIDs\":[\"95\",\"96\"]}",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "userJson",
+											"value": "{\"groupIDs\":[\"144\",\"145\"]}",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "userJson",
+											"value": "{\"userIDs\":[\"95\",\"96\"],\n\"groupIDs\":[\"144\",\"145\"]\n}",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:8080/surveyManagement/assignSurvey/236",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"surveyManagement",
+										"assignSurvey",
+										"236"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Assignment[ID]",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "BearereyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuYWlyLnJha2VzaDM0MkBnbWFpbC5jb20iLCJpc3MiOiJnYW1pZmljYXRpb24iLCJqdGkiOiI2IiwiaWF0IjoxNjM1NzYzNDE1LCJleHAiOjE2MzU3NjcwMTV9.yyTGh64GdeglcNzi5Mu2AaCiCmtyp3lh_0ZKXau1gvEUIv8hKL41GOkuBKi7y2Eobezejd7GkpibSwJ3kidCFw",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "userJson",
+											"value": "{\"userIDs\":[\"95\"],\n\"groupIDs\":[\"144\"]}",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:8080/surveyManagement/modifyAssignedSurvey/236",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"surveyManagement",
+										"modifyAssignedSurvey",
+										"236"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Survey",
+					"item": [
+						{
+							"name": "Surveys",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "BearereyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuYWlyLnJha2VzaDM0MkBnbWFpbC5jb20iLCJpc3MiOiJnYW1pZmljYXRpb24iLCJqdGkiOiI2IiwiaWF0IjoxNjM1ODI5OTI4LCJleHAiOjE2MzU4MzM1Mjh9.Qds_jRc1F00E-_M7ePiSOuSWwY03S6nCGSGIyO6bhFZmag-mVhFz2xyqI6NaPvA4109v2artwZL4TUonUnrJvw",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:8080/surveyManagement/surveys",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"surveyManagement",
+										"surveys"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Survey with ID",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "BearereyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuYWlyLnJha2VzaDM0MkBnbWFpbC5jb20iLCJpc3MiOiJnYW1pZmljYXRpb24iLCJqdGkiOiI2IiwiaWF0IjoxNjM1NzU5ODA3LCJleHAiOjE2MzU3NjM0MDd9.mayQAq_QL2-EA6J4bFdw4UolGBqb9cp2jmXLY_IXR7YEw8LKFgxDyx-wGIsD8FmFaZ74CZE0iFuV4YVRIjsV7w",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:8080/surveyManagement/survey/236",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"surveyManagement",
+										"survey",
+										"236"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "QuestionsInSurvey[ID]",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "BearereyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuYWlyLnJha2VzaDM0MkBnbWFpbC5jb20iLCJpc3MiOiJnYW1pZmljYXRpb24iLCJqdGkiOiI2IiwiaWF0IjoxNjM1ODI5OTI4LCJleHAiOjE2MzU4MzM1Mjh9.Qds_jRc1F00E-_M7ePiSOuSWwY03S6nCGSGIyO6bhFZmag-mVhFz2xyqI6NaPvA4109v2artwZL4TUonUnrJvw",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:8080/surveyManagement/surveyQuestions/253",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"surveyManagement",
+										"surveyQuestions",
+										"253"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "SurveyAssignedData[id]",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "BearereyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuYWlyLnJha2VzaDM0MkBnbWFpbC5jb20iLCJpc3MiOiJnYW1pZmljYXRpb24iLCJqdGkiOiI2IiwiaWF0IjoxNjM1ODI5OTI4LCJleHAiOjE2MzU4MzM1Mjh9.Qds_jRc1F00E-_M7ePiSOuSWwY03S6nCGSGIyO6bhFZmag-mVhFz2xyqI6NaPvA4109v2artwZL4TUonUnrJvw",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:8080/surveyManagement/surveyAssignments/243",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"surveyManagement",
+										"surveyAssignments",
+										"243"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add Survey",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "BearereyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuYWlyLnJha2VzaDM0MkBnbWFpbC5jb20iLCJpc3MiOiJnYW1pZmljYXRpb24iLCJqdGkiOiI2IiwiaWF0IjoxNjM1ODI5OTI4LCJleHAiOjE2MzU4MzM1Mjh9.Qds_jRc1F00E-_M7ePiSOuSWwY03S6nCGSGIyO6bhFZmag-mVhFz2xyqI6NaPvA4109v2artwZL4TUonUnrJvw",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "userJson",
+											"value": "{\n\"surveyName\":\"Zis - Gaming\",\n\"totalNumbersOfMCQQuestions\":\"1\",\n\"surveyMCQQuestions\":[\n\t\t\t\t\t{\n\t\t\t\t\t\"questionNumberInSurvey\":\"1\",\n\t\t\t\t\t\"question\":\"How much you like Gamification?\",\n\t\t\t\t\t\"option1\":\"25%\",\n\t\t\t\t\t\"option2\":\"50%\",\n\t\t\t\t\t\"option3\":\"75%\",\n\t\t\t\t\t\"option4\":\"100%\",\n\t\t\t\t\t\"answer\":\"100%\"\n\t\t\t\t\t}\n\t\t\t\t],\n\"totalNumbersOfMMCQQuestions\":\"1\",\n\"surveyMMCQQuestions\":[\n\t\t\t\t\t{\n\t\t\t\t\t\"questionNumberInSurvey\":\"1\",\n\t\t\t\t\t\"question\":\"How much you like Gamification?\",\n\t\t\t\t\t\"option1\":\"25%\",\n\t\t\t\t\t\"option2\":\"50%\",\n\t\t\t\t\t\"option3\":\"75%\",\n\t\t\t\t\t\"option4\":\"100%\",\n\t\t\t\t\t\"answer\":[\"100%\",\"50%\"]\n\t\t\t\t\t}\n\t\t\t\t],\n\"totalNumbersOfDropDownQuestions\":\"1\",\n\"surveyDropDownQuestions\":[\n\t\t\t\t\t{\n\t\t\t\t\t\"questionNumberInSurvey\":\"1\",\n\t\t\t\t\t\"question\":\"How much you like Gamification?\",\n\t\t\t\t\t\"options\":[\"10%\",\"20%\",\"90%\",\"100%\"],\n\t\t\t\t\t\"labels\":[\"Consider graphics\",\"Cosnsider perfomance\"],\n\t\t\t\t\t\"answer\":[\"10%\",\"100%\"]\n\t\t\t\t\t}\n\t\t\t\t]\t\t\t\t\n}",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:8080/surveyManagement/addSurvey",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"surveyManagement",
+										"addSurvey"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Status[ID]",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "BearereyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuYWlyLnJha2VzaDM0MkBnbWFpbC5jb20iLCJpc3MiOiJnYW1pZmljYXRpb24iLCJqdGkiOiI2IiwiaWF0IjoxNjM1NzU5ODA3LCJleHAiOjE2MzU3NjM0MDd9.mayQAq_QL2-EA6J4bFdw4UolGBqb9cp2jmXLY_IXR7YEw8LKFgxDyx-wGIsD8FmFaZ74CZE0iFuV4YVRIjsV7w",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "userJson",
+											"value": "true",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:8080/surveyManagement/updateSurveyStatus/220",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"surveyManagement",
+										"updateSurveyStatus",
+										"220"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Modify Survey[ID]",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "BearereyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuYWlyLnJha2VzaDM0MkBnbWFpbC5jb20iLCJpc3MiOiJnYW1pZmljYXRpb24iLCJqdGkiOiI2IiwiaWF0IjoxNjM1ODI5OTI4LCJleHAiOjE2MzU4MzM1Mjh9.Qds_jRc1F00E-_M7ePiSOuSWwY03S6nCGSGIyO6bhFZmag-mVhFz2xyqI6NaPvA4109v2artwZL4TUonUnrJvw",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "userJson",
+											"value": "{\n\"surveyName\":\"Zis - Gaming\",\n\"totalNumbersOfMCQQuestions\":\"1\",\n\"surveyMCQQuestions\":[\n\t\t\t\t\t{\n\t\t\t\t\t\"questionNumberInSurvey\":\"1\",\n\t\t\t\t\t\"question\":\"How much you like Gamification?\",\n\t\t\t\t\t\"option1\":\"25%\",\n\t\t\t\t\t\"option2\":\"50%\",\n\t\t\t\t\t\"option3\":\"75%\",\n\t\t\t\t\t\"option4\":\"100%\",\n\t\t\t\t\t\"answer\":\"100%\"\n\t\t\t\t\t}\n\t\t\t\t],\n\"totalNumbersOfMMCQQuestions\":\"1\",\n\"surveyMMCQQuestions\":[\n\t\t\t\t\t{\n\t\t\t\t\t\"questionNumberInSurvey\":\"1\",\n\t\t\t\t\t\"question\":\"How much you like Gamification?\",\n\t\t\t\t\t\"option1\":\"25%\",\n\t\t\t\t\t\"option2\":\"50%\",\n\t\t\t\t\t\"option3\":\"75%\",\n\t\t\t\t\t\"option4\":\"100%\",\n\t\t\t\t\t\"answer\":[\"100%\",\"50%\"]\n\t\t\t\t\t}\n\t\t\t\t],\n\"totalNumbersOfDropDownQuestions\":\"1\",\n\"surveyDropDownQuestions\":[\n\t\t\t\t\t{\n\t\t\t\t\t\"questionNumberInSurvey\":\"1\",\n\t\t\t\t\t\"question\":\"How much you like Gamification?\",\n\t\t\t\t\t\"options\":[\"10%\",\"20%\",\"90%\",\"100%\"],\n\t\t\t\t\t\"labels\":[\"Consider graphics\",\"Cosnsider perfomance\"],\n\t\t\t\t\t\"answer\":[\"10%\",\"100%\"]\n\t\t\t\t\t}\n\t\t\t\t]\t\t\t\t\n}",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:8080/surveyManagement/modifySurvey/253",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"surveyManagement",
+										"modifySurvey",
+										"253"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Country Management",
+			"item": [
+				{
+					"name": "addCountry with languages",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "BearereyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuYWlyLnJha2VzaDM0MkBnbWFpbC5jb20iLCJpc3MiOiJnYW1pZmljYXRpb24iLCJqdGkiOiI2IiwiaWF0IjoxNjM1NDk4NDcxLCJleHAiOjE2MzU1MDIwNzF9.6G-_PIBcynNN-arVVwMnzjeirA92ycdlXC2OIeACjf_khypBp60RkFOaiOv72n-1XJdgBQeLrs7XfxGvmFrJ6g",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "userJson",
+									"value": "{\"country\":\"Germany\",\n\"languages\":[\"West Frisian\",\"English \",\"Papiamento\",\"Dutch Low Saxon\",\"Limburgish \"]}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/countrylanguageManagement/addCountryAndLanguages",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"countrylanguageManagement",
+								"addCountryAndLanguages"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Countries and Languages",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "BearereyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuYWlyLnJha2VzaDM0MkBnbWFpbC5jb20iLCJpc3MiOiJnYW1pZmljYXRpb24iLCJqdGkiOiI2IiwiaWF0IjoxNjM1ODIwODkxLCJleHAiOjE2MzU4MjQ0OTF9.4N-iJHdRIYvlLx-FxrgFlBjBpJ2yLuOV4lmPxGRDpNbukR0KDQxKdzyrIfvWV_ohXafQkTjsRhOOK_toz4WUbg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8080/countrylanguageManagement/countries",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"countrylanguageManagement",
+								"countries"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Country [country ID]",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "BearereyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuYWlyLnJha2VzaDM0MkBnbWFpbC5jb20iLCJpc3MiOiJnYW1pZmljYXRpb24iLCJqdGkiOiI2IiwiaWF0IjoxNjM1NDk4NDcxLCJleHAiOjE2MzU1MDIwNzF9.6G-_PIBcynNN-arVVwMnzjeirA92ycdlXC2OIeACjf_khypBp60RkFOaiOv72n-1XJdgBQeLrs7XfxGvmFrJ6g",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8080/countrylanguageManagement/country/214",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"countrylanguageManagement",
+								"country",
+								"214"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Country",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "BearereyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuYWlyLnJha2VzaDM0MkBnbWFpbC5jb20iLCJpc3MiOiJnYW1pZmljYXRpb24iLCJqdGkiOiI2IiwiaWF0IjoxNjM1ODIwODkxLCJleHAiOjE2MzU4MjQ0OTF9.4N-iJHdRIYvlLx-FxrgFlBjBpJ2yLuOV4lmPxGRDpNbukR0KDQxKdzyrIfvWV_ohXafQkTjsRhOOK_toz4WUbg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "userJson",
+									"value": "{\"country\":\"NetherLands\",\n\"languages\":[\"English\"]}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/countrylanguageManagement/modifyCountryAndLanguages/56",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"countrylanguageManagement",
+								"modifyCountryAndLanguages",
+								"56"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateCountryStatus [ID]",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "BearereyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJyYWtlc2gucHJAemlzcGwuY29tIiwiaXNzIjoiZ2FtaWZpY2F0aW9uIiwianRpIjoiMSIsImlhdCI6MTYzMjE0NDU4MCwiZXhwIjoxNjMyMTQ4MTgwfQ.mq9hxIgIe5mesWcDezqfe8UL5tBumcODT1VpGOJekddtWYnuz8lvvCtYaGd67Awl5TYi20SHdT_NPZI8ev17jA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "userJson",
+									"value": "{\"status\":\"false\"}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/countrylanguageManagement/updateCountryStatus/199",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"countrylanguageManagement",
+								"updateCountryStatus",
+								"199"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All languages",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "BearereyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuYWlyLnJha2VzaDM0MkBnbWFpbC5jb20iLCJpc3MiOiJnYW1pZmljYXRpb24iLCJqdGkiOiI2IiwiaWF0IjoxNjM1ODIwODkxLCJleHAiOjE2MzU4MjQ0OTF9.4N-iJHdRIYvlLx-FxrgFlBjBpJ2yLuOV4lmPxGRDpNbukR0KDQxKdzyrIfvWV_ohXafQkTjsRhOOK_toz4WUbg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8080/countrylanguageManagement/languages",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"countrylanguageManagement",
+								"languages"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Language [language ID]",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "BearereyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJyYWtlc2gucHJAemlzcGwuY29tIiwiaXNzIjoiZ2FtaWZpY2F0aW9uIiwianRpIjoiMSIsImlhdCI6MTYzMjE0NDU4MCwiZXhwIjoxNjMyMTQ4MTgwfQ.mq9hxIgIe5mesWcDezqfe8UL5tBumcODT1VpGOJekddtWYnuz8lvvCtYaGd67Awl5TYi20SHdT_NPZI8ev17jA",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8080/countrylanguageManagement/language/206",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"countrylanguageManagement",
+								"language",
+								"206"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Language [ID]",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "BearereyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJyYWtlc2gucHJAemlzcGwuY29tIiwiaXNzIjoiZ2FtaWZpY2F0aW9uIiwianRpIjoiMSIsImlhdCI6MTYzMjE0NDU4MCwiZXhwIjoxNjMyMTQ4MTgwfQ.mq9hxIgIe5mesWcDezqfe8UL5tBumcODT1VpGOJekddtWYnuz8lvvCtYaGd67Awl5TYi20SHdT_NPZI8ev17jA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "userJson",
+									"value": "{\"language\":\"MALAYALAM\"}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/countrylanguageManagement/modifyLanguage/196",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"countrylanguageManagement",
+								"modifyLanguage",
+								"196"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateLanguageStatus [ID]",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "BearereyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJyYWtlc2gucHJAemlzcGwuY29tIiwiaXNzIjoiZ2FtaWZpY2F0aW9uIiwianRpIjoiMSIsImlhdCI6MTYzMjE0NDU4MCwiZXhwIjoxNjMyMTQ4MTgwfQ.mq9hxIgIe5mesWcDezqfe8UL5tBumcODT1VpGOJekddtWYnuz8lvvCtYaGd67Awl5TYi20SHdT_NPZI8ev17jA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "userJson",
+									"value": "{\"status\":\"false\"}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/countrylanguageManagement/updateLanguageStatus/206",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"countrylanguageManagement",
+								"updateLanguageStatus",
+								"206"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Company Management",
+			"item": [
+				{
+					"name": "Register Company",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "BearereyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuYWlyLnJha2VzaDM0MkBnbWFpbC5jb20iLCJpc3MiOiJnYW1pZmljYXRpb24iLCJqdGkiOiI2IiwiaWF0IjoxNjM1NDk1MzQ2LCJleHAiOjE2MzU0OTg5NDZ9.32P3PM1qRGcQsuDhFEQDmylkQh0GRf1xplVk0o7k7HyNN6Wq-pPubhR2hyd-Rmy-mujJixbbBqK2NQCSuirChg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "userJson",
+									"value": "{\n    \"companyName\":\"aura\",\n    \"address\": \"baker street\",\n    \"pincode\":\"6582\",\n    \"state\":\"Amsterdam\",\n    \"country\": \"Netherlands\",\n\"primaryContact\":\"1234567890\",\n\"secondaryContact\":\"0987654321\",\n\"startDate\":\"2020-11-25\",\n\"duration\":\"ONEMONTH\",\n\"primaryEmail\":\"zispl@zisbv.com\",\n\"secondaryEmail\":\"superZisbv@gmail.com\"\n}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/companyManagement/registerCompany",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"companyManagement",
+								"registerCompany"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Companies",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "BearereyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuYWlyLnJha2VzaDM0MkBnbWFpbC5jb20iLCJpc3MiOiJnYW1pZmljYXRpb24iLCJqdGkiOiI2IiwiaWF0IjoxNjM1NDk1MzQ2LCJleHAiOjE2MzU0OTg5NDZ9.32P3PM1qRGcQsuDhFEQDmylkQh0GRf1xplVk0o7k7HyNN6Wq-pPubhR2hyd-Rmy-mujJixbbBqK2NQCSuirChg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8080/companyManagement/allCompanies",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"companyManagement",
+								"allCompanies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Company [ID]",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "BearereyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuYWlyLnJha2VzaDM0MkBnbWFpbC5jb20iLCJpc3MiOiJnYW1pZmljYXRpb24iLCJqdGkiOiI2IiwiaWF0IjoxNjM1NDk1MzQ2LCJleHAiOjE2MzU0OTg5NDZ9.32P3PM1qRGcQsuDhFEQDmylkQh0GRf1xplVk0o7k7HyNN6Wq-pPubhR2hyd-Rmy-mujJixbbBqK2NQCSuirChg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8080/companyManagement/company/208",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"companyManagement",
+								"company",
+								"208"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Status [ID]",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "BearereyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuYWlyLnJha2VzaDM0MkBnbWFpbC5jb20iLCJpc3MiOiJnYW1pZmljYXRpb24iLCJqdGkiOiI2IiwiaWF0IjoxNjM1NDk1MzQ2LCJleHAiOjE2MzU0OTg5NDZ9.32P3PM1qRGcQsuDhFEQDmylkQh0GRf1xplVk0o7k7HyNN6Wq-pPubhR2hyd-Rmy-mujJixbbBqK2NQCSuirChg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "userJson",
+									"value": "{\n    \"status\":\"true\"\n}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/companyManagement/updateStatus/208",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"companyManagement",
+								"updateStatus",
+								"208"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Modify Company Details",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "BearereyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuYWlyLnJha2VzaDM0MkBnbWFpbC5jb20iLCJpc3MiOiJnYW1pZmljYXRpb24iLCJqdGkiOiI2IiwiaWF0IjoxNjM1NDk1MzQ2LCJleHAiOjE2MzU0OTg5NDZ9.32P3PM1qRGcQsuDhFEQDmylkQh0GRf1xplVk0o7k7HyNN6Wq-pPubhR2hyd-Rmy-mujJixbbBqK2NQCSuirChg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "userJson",
+									"value": "{\n    \"companyName\":\"AURA\",\n    \"address\": \"baker street\",\n    \"pincode\":\"6582\",\n    \"state\":\"Amsterdam\",\n    \"country\": \"Netherlands\",\n\"primaryContact\":\"1234567890\",\n\"secondaryContact\":\"0987654321\",\n\"startDate\":\"2020-10-25\",\n\"duration\":\"FIVEYEARS\",\n\"primaryEmail\":\"zispl@zisbv.com\",\n\"secondaryEmail\":\"superZisbv@gmail.com\"\n}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/companyManagement/modifyCompany/208",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"companyManagement",
+								"modifyCompany",
+								"208"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "AdminComponents Management",
+			"item": [
+				{
+					"name": "All Admin Components",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "BearereyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuYWlyLnJha2VzaDM0MkBnbWFpbC5jb20iLCJpc3MiOiJnYW1pZmljYXRpb24iLCJqdGkiOiI2IiwiaWF0IjoxNjM1NDMxMTYwLCJleHAiOjE2MzU0MzQ3NjB9.W_UmL4FE_ollbYZPJPSrvBJuYJmhMOHtO5G286Zpou7o73E-AcgR0tw4Vw0QT1YPirSD3OItMP9T9zB5pmhLwQ",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8080/adminComponentsManagement/allAdminComponents",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"adminComponentsManagement",
+								"allAdminComponents"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Admin Components [ID]",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "BearereyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuYWlyLnJha2VzaDM0MkBnbWFpbC5jb20iLCJpc3MiOiJnYW1pZmljYXRpb24iLCJqdGkiOiI2IiwiaWF0IjoxNjMzOTYwMDg0LCJleHAiOjE2MzM5NjM2ODR9.XhsThDthczqs3OD8qNKZHxrDagkvJjB2UsEYGAtPN9WCKaRg6uKXJE65c8xUaVTLkaL3BWavNN55ySMz6BGxyw",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8080/adminComponentsManagement/adminComponent/31",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"adminComponentsManagement",
+								"adminComponent",
+								"31"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Admin Component",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "BearereyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuYWlyLnJha2VzaDM0MkBnbWFpbC5jb20iLCJpc3MiOiJnYW1pZmljYXRpb24iLCJqdGkiOiI2IiwiaWF0IjoxNjM0MTM4Nzk3LCJleHAiOjE2MzQxNDIzOTd9.M_gI4G9antxGH95LZnQFhvadhnF_6WqRTnLpWeSxrhjnQT9NHYJ0EOyuhX_Yf19cD3dZ2KsodgbG8dytO3vPrA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "userJson",
+									"value": "{\"title\":\"Country Management\",\n\"content\":\"Manage all countries and languages\",\n\"className\":\"primary\",\n\"link\":\"/admin/country\"}",
+									"type": "text"
+								},
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/rakes/Desktop/countryManagement.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/adminComponentsManagement/addAdminComponent",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"adminComponentsManagement",
+								"addAdminComponent"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "modify Component [id]",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "BearereyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuYWlyLnJha2VzaDM0MkBnbWFpbC5jb20iLCJpc3MiOiJnYW1pZmljYXRpb24iLCJqdGkiOiI2IiwiaWF0IjoxNjM0MDA5MzcyLCJleHAiOjE2MzQwMTI5NzJ9.fhLAeOFpIuzN58RgZaWB0khoG9ha-FTBSNODRrc3_dZlYNCDN9Bplw-zkXlQrLxbeD50gNOz09MoudXYexo8Jg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "userJson",
+									"value": "{\"title\":\"Language Management\",\n\"content\":\"Manage Your Groups easily\",\n\"className\":\"primary\",\n\"link\":\"/admin\"}",
+									"type": "text"
+								},
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/rakes/Desktop/darKLightTheme.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/adminComponentsManagement/updateComponent/40",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"adminComponentsManagement",
+								"updateComponent",
+								"40"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Company assignComponents",
+			"item": [
+				{
+					"name": "Assign Components",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "BearereyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuYWlyLnJha2VzaDM0MkBnbWFpbC5jb20iLCJpc3MiOiJnYW1pZmljYXRpb24iLCJqdGkiOiI2IiwiaWF0IjoxNjM1NDg1OTIwLCJleHAiOjE2MzU0ODk1MjB9.M5IJKjd8u592mDA4_Jvper7ZJjh64VsyMgBz961hu7eHOhohUtQtUi-IGGRuGWUmaA9F8VMT_-UQxem1vYCM5Q",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "userJson",
+									"value": "{\"industryId\":[\"202\"],\n\"componentId\":[\"65\",\"66\"],\n\"gameId\":[\"201\"],\n\"themeId\":\"200\"}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/assignCompanyComponents/assignComponents/46",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"assignCompanyComponents",
+								"assignComponents",
+								"46"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Assignments[CompanyID]",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "BearereyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuYWlyLnJha2VzaDM0MkBnbWFpbC5jb20iLCJpc3MiOiJnYW1pZmljYXRpb24iLCJqdGkiOiI2IiwiaWF0IjoxNjM1NDg1OTIwLCJleHAiOjE2MzU0ODk1MjB9.M5IJKjd8u592mDA4_Jvper7ZJjh64VsyMgBz961hu7eHOhohUtQtUi-IGGRuGWUmaA9F8VMT_-UQxem1vYCM5Q",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "userJson",
+									"value": "{\"themeId\":\"200\",\n\"industryId\":[\"202\"],\n\"componentId\":[\"65\",\"66\",\"67\",\"68\"],\n\"gameId\":[\"201\"]}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/assignCompanyComponents/updateAssignedComponents/46",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"assignCompanyComponents",
+								"updateAssignedComponents",
+								"46"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Game Upload",
+			"item": [
+				{
+					"name": "All Games",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "BearereyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuYWlyLnJha2VzaDM0MkBnbWFpbC5jb20iLCJpc3MiOiJnYW1pZmljYXRpb24iLCJqdGkiOiI2IiwiaWF0IjoxNjM1ODIwODkxLCJleHAiOjE2MzU4MjQ0OTF9.4N-iJHdRIYvlLx-FxrgFlBjBpJ2yLuOV4lmPxGRDpNbukR0KDQxKdzyrIfvWV_ohXafQkTjsRhOOK_toz4WUbg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8080/Games/allGames",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Games",
+								"allGames"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Game",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "BearereyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuYWlyLnJha2VzaDM0MkBnbWFpbC5jb20iLCJpc3MiOiJnYW1pZmljYXRpb24iLCJqdGkiOiI2IiwiaWF0IjoxNjM1NDAwMzA2LCJleHAiOjE2MzU0MDM5MDZ9.Ok1afTRBEpjuxJBhIh4iZGk7ONDRuh3kPmk0surchYr71SLCpeR7VF4gM9Mtfa7ob2ZQtQH7n1Fd6B3ji3FBFw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "userJson",
+									"value": "{\"gameName\":\"Real Race\",\n\"keywords\":[\"Racing\",\"Fast\"],\n\"assessment\":\"true\"}",
+									"type": "text"
+								},
+								{
+									"key": "thumbNail",
+									"type": "file",
+									"src": "/C:/Users/rakes/Desktop/female-avathar2.png"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/rakes/Desktop/uploa/female-avathar5.jpg"
+								},
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/rakes/Desktop/dark.zip"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/Games/addGame",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Games",
+								"addGame"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Game [ID]",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "BearereyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuYWlyLnJha2VzaDM0MkBnbWFpbC5jb20iLCJpc3MiOiJnYW1pZmljYXRpb24iLCJqdGkiOiI2IiwiaWF0IjoxNjM1NDAwMzA2LCJleHAiOjE2MzU0MDM5MDZ9.Ok1afTRBEpjuxJBhIh4iZGk7ONDRuh3kPmk0surchYr71SLCpeR7VF4gM9Mtfa7ob2ZQtQH7n1Fd6B3ji3FBFw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "localhost:8080/Games/game/201",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Games",
+								"game",
+								"201"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Modify Game Status [ID]",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "BearereyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuYWlyLnJha2VzaDM0MkBnbWFpbC5jb20iLCJpc3MiOiJnYW1pZmljYXRpb24iLCJqdGkiOiI2IiwiaWF0IjoxNjM1NDAwMzA2LCJleHAiOjE2MzU0MDM5MDZ9.Ok1afTRBEpjuxJBhIh4iZGk7ONDRuh3kPmk0surchYr71SLCpeR7VF4gM9Mtfa7ob2ZQtQH7n1Fd6B3ji3FBFw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "status",
+									"value": "true",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/Games/modifyGameStatus/201",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Games",
+								"modifyGameStatus",
+								"201"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Modify Game [ID]",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "BearereyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuYWlyLnJha2VzaDM0MkBnbWFpbC5jb20iLCJpc3MiOiJnYW1pZmljYXRpb24iLCJqdGkiOiI2IiwiaWF0IjoxNjM1ODIwODkxLCJleHAiOjE2MzU4MjQ0OTF9.4N-iJHdRIYvlLx-FxrgFlBjBpJ2yLuOV4lmPxGRDpNbukR0KDQxKdzyrIfvWV_ohXafQkTjsRhOOK_toz4WUbg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "thumbNail",
+									"type": "file",
+									"src": "/C:/Users/rakes/Desktop/female-avathar2.png",
+									"disabled": true
+								},
+								{
+									"key": "userJson",
+									"value": "{\"gameName\":\" BattleGrounds PUB-G\"}",
+									"type": "text"
+								},
+								{
+									"key": "userJson",
+									"value": "{\"keywords\":[\"Battle\",\"Action\"]}",
+									"type": "text"
+								},
+								{
+									"key": "userJson",
+									"value": "{\"assessment\":\"true\"}",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/rakes/Desktop/pubg.jpg",
+									"disabled": true
+								},
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/rakes/Desktop/Fast1.zip",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/Games/modifyGame/201",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Games",
+								"modifyGame",
+								"201"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Theme Upload",
+			"item": [
+				{
+					"name": "All Themes",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "BearereyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuYWlyLnJha2VzaDM0MkBnbWFpbC5jb20iLCJpc3MiOiJnYW1pZmljYXRpb24iLCJqdGkiOiI2IiwiaWF0IjoxNjM1NDAwMzA2LCJleHAiOjE2MzU0MDM5MDZ9.Ok1afTRBEpjuxJBhIh4iZGk7ONDRuh3kPmk0surchYr71SLCpeR7VF4gM9Mtfa7ob2ZQtQH7n1Fd6B3ji3FBFw",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8080/Themes/allThemes",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Themes",
+								"allThemes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Theme",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "BearereyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuYWlyLnJha2VzaDM0MkBnbWFpbC5jb20iLCJpc3MiOiJnYW1pZmljYXRpb24iLCJqdGkiOiI2IiwiaWF0IjoxNjM1NDAwMzA2LCJleHAiOjE2MzU0MDM5MDZ9.Ok1afTRBEpjuxJBhIh4iZGk7ONDRuh3kPmk0surchYr71SLCpeR7VF4gM9Mtfa7ob2ZQtQH7n1Fd6B3ji3FBFw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "userJson",
+									"value": "{\"themeName\":\"Green\",\n\"keywords\":[\"Green\",\"Dark\"]}",
+									"type": "text"
+								},
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/rakes/Desktop/dark.zip"
+								},
+								{
+									"key": "thumbNail",
+									"type": "file",
+									"src": "/C:/Users/rakes/Desktop/female-avathar2.png"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/rakes/Desktop/female-avathar2.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/Themes/addTheme",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Themes",
+								"addTheme"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Modify Theme Status [ID]",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "BearereyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuYWlyLnJha2VzaDM0MkBnbWFpbC5jb20iLCJpc3MiOiJnYW1pZmljYXRpb24iLCJqdGkiOiI2IiwiaWF0IjoxNjM1NDAwMzA2LCJleHAiOjE2MzU0MDM5MDZ9.Ok1afTRBEpjuxJBhIh4iZGk7ONDRuh3kPmk0surchYr71SLCpeR7VF4gM9Mtfa7ob2ZQtQH7n1Fd6B3ji3FBFw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "status",
+									"value": "true",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/Themes/modifyThemeStatus/200",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Themes",
+								"modifyThemeStatus",
+								"200"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Theme [ID]",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "BearereyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuYWlyLnJha2VzaDM0MkBnbWFpbC5jb20iLCJpc3MiOiJnYW1pZmljYXRpb24iLCJqdGkiOiI2IiwiaWF0IjoxNjM1NDAwMzA2LCJleHAiOjE2MzU0MDM5MDZ9.Ok1afTRBEpjuxJBhIh4iZGk7ONDRuh3kPmk0surchYr71SLCpeR7VF4gM9Mtfa7ob2ZQtQH7n1Fd6B3ji3FBFw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "localhost:8080/Themes/theme/200",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Themes",
+								"theme",
+								"200"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Modify Theme [ID]",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "BearereyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuYWlyLnJha2VzaDM0MkBnbWFpbC5jb20iLCJpc3MiOiJnYW1pZmljYXRpb24iLCJqdGkiOiI2IiwiaWF0IjoxNjM1NDAwMzA2LCJleHAiOjE2MzU0MDM5MDZ9.Ok1afTRBEpjuxJBhIh4iZGk7ONDRuh3kPmk0surchYr71SLCpeR7VF4gM9Mtfa7ob2ZQtQH7n1Fd6B3ji3FBFw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "thumbNail",
+									"type": "file",
+									"src": "/C:/Users/rakes/Desktop/uploa/male-avathar5.jpg",
+									"disabled": true
+								},
+								{
+									"key": "userJson",
+									"value": "{\"themeName\":\"GreenPie\"}",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/rakes/Desktop/uploa/male-avatar1.jpg",
+									"disabled": true
+								},
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/rakes/Desktop/fast.zip",
+									"disabled": true
+								},
+								{
+									"key": "userJson",
+									"value": "{\"keywords\":[\"nature\"]}",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/Themes/modifyTheme/200",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Themes",
+								"modifyTheme",
+								"200"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Industry Management",
+			"item": [
+				{
+					"name": "Industries",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "BearereyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuYWlyLnJha2VzaDM0MkBnbWFpbC5jb20iLCJpc3MiOiJnYW1pZmljYXRpb24iLCJqdGkiOiI2IiwiaWF0IjoxNjM1NDA4NjYzLCJleHAiOjE2MzU0MTIyNjN9.qAzLIsto4UDKYaudgD1Y3w94CXuVmo9NgrzsUhAFGD0zH1FRhzFoJXJgWhYxb8U8kdwXLcVPxunBui3pkEcP0A",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8080/industryManagement/industries",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"industryManagement",
+								"industries"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create industry",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "BearereyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuYWlyLnJha2VzaDM0MkBnbWFpbC5jb20iLCJpc3MiOiJnYW1pZmljYXRpb24iLCJqdGkiOiI2IiwiaWF0IjoxNjM1NDA4NjYzLCJleHAiOjE2MzU0MTIyNjN9.qAzLIsto4UDKYaudgD1Y3w94CXuVmo9NgrzsUhAFGD0zH1FRhzFoJXJgWhYxb8U8kdwXLcVPxunBui3pkEcP0A",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "userJson",
+									"value": "{\"name\":\"Automobile\"}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/industryManagement/addIndustry",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"industryManagement",
+								"addIndustry"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AssignIndustry",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "BearereyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuYWlyLnJha2VzaDM0MkBnbWFpbC5jb20iLCJpc3MiOiJnYW1pZmljYXRpb24iLCJqdGkiOiI2IiwiaWF0IjoxNjM1MTY1Nzc4LCJleHAiOjE2MzUxNjkzNzh9.druDMwhJRa8Foq1dTslnIdfdn9h4u3S4Q1h3fO81Qz4bhXpTGKtaWYht6ZbOVbvvdC8302raY3uonxmEJVedjA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "userJson",
+									"value": "{\"themeId\":[\"182\",\"183\"],\n\"gamesId\":[\"180\",\"181\"]}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/industryManagement/assignIndustry/186",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"industryManagement",
+								"assignIndustry",
+								"186"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ModifyIndustry",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "BearereyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuYWlyLnJha2VzaDM0MkBnbWFpbC5jb20iLCJpc3MiOiJnYW1pZmljYXRpb24iLCJqdGkiOiI2IiwiaWF0IjoxNjM1NDA4NjYzLCJleHAiOjE2MzU0MTIyNjN9.qAzLIsto4UDKYaudgD1Y3w94CXuVmo9NgrzsUhAFGD0zH1FRhzFoJXJgWhYxb8U8kdwXLcVPxunBui3pkEcP0A",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "userJson",
+									"value": "{\"industryStatus\":\"true\"}",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "userJson",
+									"value": "{\"industryName\":\"Marketing\"}",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "userJson",
+									"value": "{\"themes\":[\"200\"]}",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "userJson",
+									"value": "{\"games\":[\"201\"]}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/industryManagement/modifyIndustry/202",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"industryManagement",
+								"modifyIndustry",
+								"202"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Industry [ID]",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "BearereyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJuYWlyLnJha2VzaDM0MkBnbWFpbC5jb20iLCJpc3MiOiJnYW1pZmljYXRpb24iLCJqdGkiOiI2IiwiaWF0IjoxNjM1NDA4NjYzLCJleHAiOjE2MzU0MTIyNjN9.qAzLIsto4UDKYaudgD1Y3w94CXuVmo9NgrzsUhAFGD0zH1FRhzFoJXJgWhYxb8U8kdwXLcVPxunBui3pkEcP0A",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8080/industryManagement/industry/202",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"industryManagement",
+								"industry",
+								"202"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

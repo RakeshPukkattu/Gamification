@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org"> 	
+<head>
+    <title>Gamification -  zis-b-v Game</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body class="container">
+<div>
+        <p>Start your game.</p>
+        <p>https://zisplgamification.netlify.app/</p>
+        
+        <th:text="${model}"/p>
+       
+    </div>
+            </div>
+    <div th:if="${error != null}">
+    <p class="text-danger">[[${error}]]</p>
+</div>
+<div th:if="${message != null}">
+    <p class="text-warning">[[${message}]]</p>
+</div>
+<!--
+	<h2>Spring Boot Web Application Download Excel File</h2>
+	<a href="http://localhost:8080/download/customers.xlsx" class="btn btn-primary">Download</a>
+-->
+</body>
+</html>
